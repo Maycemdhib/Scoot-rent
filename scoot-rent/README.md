@@ -5,23 +5,18 @@ A PHP MVC scooter rental web application.
 ## Setup
 
 ### 1. Requirements
-
 - PHP 8.0+
 - MySQL 5.7+
 - Apache / Nginx with mod_rewrite
 
 ### 2. Database
-
 Run the included schema in MySQL:
-
 ```bash
 mysql -u root -p < database.sql
 ```
 
 ### 3. Configure the database
-
 Edit `config/Database.php`:
-
 ```php
 private $host     = "localhost";
 private $db_name  = "scoot_rent";
@@ -30,19 +25,16 @@ private $password = "your_password";
 ```
 
 ### 4. Deploy
-
 Place the project in your web server root (e.g. `htdocs/scoot-rent/`).
 
 ### 5. Default admin account
-
 - **Email:** admin@scootrent.com
 - **Password:** admin123
-  > ⚠️ Change this immediately after first login.
+> ⚠️ Change this immediately after first login.
 
 ---
 
 ## Project Structure
-
 ```
 scoot-rent/
 ├── config/
@@ -75,7 +67,6 @@ scoot-rent/
 ```
 
 ## Security fixes applied
-
 - ✅ All output escaped with `htmlspecialchars()` via `e()` helper
 - ✅ Auth guards on every protected page (`requireLogin`, `requireAdmin`)
 - ✅ Image upload validates MIME type (not just extension) and file size
@@ -83,54 +74,4 @@ scoot-rent/
 - ✅ All SQL uses parameterized queries (no injection risk)
 - ✅ Status values validated against allowlist before DB update
 - ✅ Reservation dates validated server-side (end > start)
-- # ✅ Removed duplicate `session_start()` calls
-  ScootRent is a full-stack web application for renting scooters online.
-  It allows users to browse available scooters, make reservations, and manage their bookings.
-  Admins can manage scooters and reservations through a dedicated dashboard.
-
-🚀 Features
-👤 User Features
-User registration & login
-Multilingual support (FR / EN)
-Browse available scooters
-Make reservations with date & time
-View personal reservations
-Session-based authentication
-🛠️ Admin Features
-Admin dashboard
-Manage scooters (CRUD)
-Manage reservations
-Update reservation status (pending / confirmed / cancelled)
-🧰 Tech Stack
-Backend: PHP
-Frontend: HTML, CSS, Bootstrap 5
-Database: MySQL
-Other: Sessions, Cookies, PDO
-📁 Project Structure
-
-/controllers
-/models
-/views
-/helpers
-/config
-/public/css
-/public/uploads
-/lang
-
-🔐 Authentication
-Secure login system using PHP sessions
-Passwords should be hashed using password_hash()
-Role-based access (user / admin)
-🌍 Multilingual Support
-
-The app supports:
-
-🇫🇷 French
-🇬🇧 English
-
-Language is stored using:
-
-GET parameters
-Sessions
-Cookies
-📸 Screenshots (optional)
+- ✅ Removed duplicate `session_start()` calls
